@@ -25,3 +25,10 @@ Route::post('/genero', 'GeneroController@guardar');
 
 Route::get('/filme/criar', 'FilmeController@criar');
 Route::post('/filme/guardar', 'FilmeController@guardar');
+
+Route::get('/filme/atualizar/{filme}', 'FilmeController@editar');
+Route::post('/filme/atualizar/{filme}', 'FilmeController@atualizar');
+
+Route::get('/filme/{filme}', 'FilmeController@visualizar');
+
+Route::delete('/filme/{filme}', 'FilmeController@deletar');
