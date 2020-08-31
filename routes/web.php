@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/form', function () {
     return view('filme.criar');
 });
+
+Route::get('/genero', 'GeneroController@criar');
+Route::post('/genero', 'GeneroController@guardar');

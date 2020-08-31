@@ -15,17 +15,30 @@
 <body>
     <div class="container">
         <br>
-        <h1>Criar novo filme</h1>
-        <form action="#">
+        <h1>Criar novo genero</h1>
+
+        @if (session('message'))
+            <p class="alert alert-success">{{ session('message') }}</p>
+        @endif
+        <form action="/genero" method="POST">
             @csrf
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">???</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="???" name="???">
+                        <label for="exampleFormControlInput1">Nome</label>
+                        <input type="text" 
+                                class="form-control" 
+                                id="exampleFormControlInput1" 
+                                placeholder="nome" 
+                                name="nome">
                     </div>
                 </div>
-
+                
+                @if($errors->any())
+                    @foreach($errors->all() as $error)
+                        <div class="alert alert-danger"> {{ $error }} </div>
+                    @endforeach
+                @endif
 
                 <div class="col-12 text-right">
                     <button class="btn btn-primary">Enviar!</button>
