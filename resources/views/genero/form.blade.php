@@ -17,7 +17,7 @@
         <br>
         <h1>Criar novo genero</h1>
 
-        @if (session('message'))
+        @if (session('mensage'))
             <p class="alert alert-success">{{ session('message') }}</p>
         @endif
         <form action="/genero" method="POST">

@@ -22,3 +22,6 @@ Route::get('/form', function () {
 
 Route::get('/genero', 'GeneroController@criar');
 Route::post('/genero', 'GeneroController@guardar');
+
+Route::get('/filme/criar', 'FilmeController@criar');
+Route::post('/filme/guardar', 'FilmeController@guardar');
